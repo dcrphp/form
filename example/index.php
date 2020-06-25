@@ -6,6 +6,7 @@ use DcrPHP\Form\Form;
 ini_set('display_errors', 'on');
 
 echo 'support type:';
+echo "\r\n";
 print_r(Form::getSupportElements());
 echo "\r\n";
 
