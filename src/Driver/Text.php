@@ -11,13 +11,12 @@ class Text extends Element
     public function html()
     {
         // TODO: Implement html() method.
-        $value = $this->value ? $this->value : $this->default;
         $html = '';
         if($this->label && $this->label instanceof Label)
         {
             $html .= $this->label->htmlStart();
         }
-        $html .= "<input class='{$this->class}' name='{$this->name}' id='{$this->id}' type='text' value='{$value}'>";
+        $html .= "<input class='{$this->class}' name='{$this->name}' id='{$this->id}' type='text' value='{$this->value}'>";
         if($this->label && $this->label instanceof Label)
         {
             $html .= $this->label->htmlEnd();
