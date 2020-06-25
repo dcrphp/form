@@ -1,0 +1,18 @@
+{
+    "name": "dcrphp/form",
+    "description": "配置文件解析类，目前只支持php配置",
+    "authors": [
+        {
+            "name": "HuanJun Huang"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DcrPHP\\Form\\": "src"
+        }
+    },
+    "require": {
+        "php": "^7.0"
+    }
+}
