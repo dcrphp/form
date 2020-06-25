@@ -19,4 +19,22 @@ class Form
         // TODO: Implement __callStatic() method.
         return self::createInstance($name);
     }
+
+    /**
+     * 获取受支持的input类型
+     */
+    public static function getSupportElements()
+    {
+        $driverList = __DIR__ . DIRECTORY_SEPARATOR .'Driver';
+        $fileList = scandir($driverList);
+        $list = array();
+        foreach ($fileList as $fileName)
+        {
+            if( ! in_array( $fileName, array('.','..') ) ){
+                $fileInfo = pathinfo($fileName);
+                array_push( $list, strtolower($fileInfo['filename']) );
+            }
+        }
+        return $list;
+    }
 }

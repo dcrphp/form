@@ -5,6 +5,10 @@ use DcrPHP\Form\Form;
 
 ini_set('display_errors', 'on');
 
+echo 'support type:';
+print_r(Form::getSupportElements());
+echo "\r\n";
+
 echo 'text:';
 echo "\r\n";
 $label = Form::label()->class('class')->value('');
