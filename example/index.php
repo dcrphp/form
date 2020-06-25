@@ -15,6 +15,9 @@ echo "\r\n";
 $label = Form::label()->class('class')->value('');
 echo Form::text()->label($label)->class('class')->id('id')->name('name')->value('value')->html();
 echo "\r\n";
+
+echo 'hidden:';
+echo "\r\n";
 $label = Form::label()->class('class')->value('');
 echo Form::hidden()->id('id')->name('name')->value('')->html();
 echo "\r\n";
