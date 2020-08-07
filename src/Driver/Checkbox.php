@@ -14,9 +14,9 @@ class Checkbox extends Element
     {
         // TODO: Implement html() method.
         $html = '';
-        $isItemStr = false;
+        //$isItemStr = false;
         if( ! is_array( $this->item ) ) {
-            $isItemStr = true;
+            //$isItemStr = true;
             $inputValueList = explode(',', $this->item);
         } else {
             $inputValueList = $this->item;
@@ -28,7 +28,7 @@ class Checkbox extends Element
         $valueList = explode(',', $this->value);
         foreach ($inputValueList as $inpValueStr => $inpValueDetail) {
             $additionStr = '';
-            if (in_array($inpValueDetail, $valueList) || 1 == $this->value) {
+            if (in_array($inpValueDetail, $valueList) || 1 === $this->value) {
                 $additionStr = ' checked ';
             }
 
@@ -36,10 +36,10 @@ class Checkbox extends Element
                 $html .= $this->itemLabel->htmlStart();
             }
             //如果item是字符串，则直接用字符当value 如果是数组 则直接用key当value
-            if( ! $isItemStr )
+            /*if( ! $isItemStr )
             {
                 $inpValueDetail = $inpValueStr;
-            }
+            }*/
             $html .= "<input type='checkbox' {$additionStr} value='{$inpValueDetail}' name='{$this->name}[]'>{$inpValueDetail}";
             if ($this->itemLabel && $this->itemLabel instanceof Label) {
                 $html .= $this->itemLabel->htmlEnd();
