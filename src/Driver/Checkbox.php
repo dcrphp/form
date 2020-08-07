@@ -14,13 +14,8 @@ class Checkbox extends Element
     {
         // TODO: Implement html() method.
         $html = '';
-        //$isItemStr = false;
-        if( ! is_array( $this->item ) ) {
-            //$isItemStr = true;
-            $inputValueList = explode(',', $this->item);
-        } else {
-            $inputValueList = $this->item;
-        }
+        $inputValueList = explode(',', $this->item);
+
         if ($this->label && $this->label instanceof Label) {
             $html .= $this->label->htmlStart();
         }
