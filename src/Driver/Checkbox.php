@@ -15,20 +15,20 @@ class Checkbox extends Element
         // TODO: Implement html() method.
         $html = '';
         $isItemStr = false;
-        if( ! is_array( $this->item ) )
-        {
+        if( ! is_array( $this->item ) ) {
             $isItemStr = true;
             $inputValueList = explode(',', $this->item);
-        }else
-        {
+        } else {
             $inputValueList = $this->item;
         }
         if ($this->label && $this->label instanceof Label) {
             $html .= $this->label->htmlStart();
         }
-        foreach ($inputValueList as $inpValueStr=> $inpValueDetail) {
+        //多选的情况:比如选择了a,b 那就用这个数组做in_array比较
+        $valueList = explode(',', $this->value);
+        foreach ($inputValueList as $inpValueStr => $inpValueDetail) {
             $additionStr = '';
-            if ($inpValueDetail == $this->value || 1 == $this->value) {
+            if (in_array($inpValueDetail, $valueList) || 1 == $this->value) {
                 $additionStr = ' checked ';
             }
 
