@@ -27,16 +27,16 @@ class Select extends Element
         }
         $html = "<select name='{$this->name}' id='{$this->id}'>";
         $html .= "<option value=''>请选择</option>";
+
         foreach ($inputValueList as $inpValueStr=> $inpValueDetail) {
             $additionStr = '';
             if ($inpValueDetail == $this->value) {
                 $additionStr = ' selected ';
             }
-            if( ! $isItemStr )
-            {
-                $inpValueDetail = $inpValueStr;
+            if($isItemStr){
+                $inpValueStr = $inpValueDetail;
             }
-            $html .= "<option {$additionStr} value='{$inpValueDetail}'>{$inpValueDetail}</option>";
+            $html .= "<option {$additionStr} value='{$inpValueStr}'>{$inpValueDetail}</option>";
         }
         $html .= '</select>';
         if ($this->label && $this->label instanceof Label) {
