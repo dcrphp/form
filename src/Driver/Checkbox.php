@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace DcrPHP\Form\Driver;
-
 
 use DcrPHP\Form\Concerns\Element;
 
@@ -14,14 +13,11 @@ class Checkbox extends Element
     {
         // TODO: Implement html() method.
         $html = '';
-
         $isItemStr = false;
-        if( ! is_array( $this->item ) )
-        {
+        if (! is_array($this->item)) {
             $isItemStr = true;
             $inputValueList = explode(',', $this->item);
-        }else
-        {
+        } else {
             $inputValueList = $this->item;
         }
 
@@ -30,11 +26,11 @@ class Checkbox extends Element
         }
         //多选的情况:比如选择了a,b 那就用这个数组做in_array比较
         $valueList = is_array($this->value) ? array() : explode(',', $this->value);
-        //pr($valueList);
+//pr($valueList);
         foreach ($inputValueList as $inpValueStr => $inpValueDetail) {
             $additionStr = '';
-            //如果item是字符串，则直接用字符当value 如果是数组 则直接用key当value
-            if($isItemStr){
+//如果item是字符串，则直接用字符当value 如果是数组 则直接用key当value
+            if ($isItemStr) {
                 $inpValueStr = $inpValueDetail;
             }
             if (in_array($inpValueStr, $valueList) || 1 === $this->value) {

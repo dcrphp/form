@@ -1,21 +1,17 @@
 <?php
+
 require_once("../vendor/autoload.php");
-
 use DcrPHP\Form\Form;
-
 ini_set('display_errors', 'on');
-
 echo 'support type:';
 echo "\r\n";
 print_r(Form::getSupportElements());
 echo "\r\n";
-
 echo 'text:';
 echo "\r\n";
 $label = Form::label()->class('class')->value('');
 echo Form::text()->label($label)->class('class')->id('id')->name('name')->value('value')->html();
 echo "\r\n";
-
 echo 'hidden:';
 echo "\r\n";
 $label = Form::label()->class('class')->value('');

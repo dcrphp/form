@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace DcrPHP\Form\Driver;
-
 
 use DcrPHP\Form\Concerns\Element;
 
@@ -14,12 +13,10 @@ class Select extends Element
     {
         $html = '';
         $isItemStr = false;
-        if( ! is_array( $this->item ) )
-        {
+        if (! is_array($this->item)) {
             $isItemStr = true;
             $inputValueList = explode(',', $this->item);
-        }else
-        {
+        } else {
             $inputValueList = $this->item;
         }
         if ($this->label && $this->label instanceof Label) {
@@ -27,13 +24,12 @@ class Select extends Element
         }
         $html = "<select name='{$this->name}' id='{$this->id}'>";
         $html .= "<option value=''>请选择</option>";
-
-        foreach ($inputValueList as $inpValueStr=> $inpValueDetail) {
+        foreach ($inputValueList as $inpValueStr => $inpValueDetail) {
             $additionStr = '';
             if ($inpValueDetail == $this->value) {
                 $additionStr = ' selected ';
             }
-            if($isItemStr){
+            if ($isItemStr) {
                 $inpValueStr = $inpValueDetail;
             }
             $html .= "<option {$additionStr} value='{$inpValueStr}'>{$inpValueDetail}</option>";

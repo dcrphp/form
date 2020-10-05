@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace DcrPHP\Form\Driver;
-
 
 use DcrPHP\Form\Concerns\Element;
 
